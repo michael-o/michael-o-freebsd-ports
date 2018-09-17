@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nexus2
-PORTVERSION=	2.14.5
-DISTVERSIONSUFFIX=	02
+PORTVERSION=	2.14.9
+DISTVERSIONSUFFIX=	01
 CATEGORIES=	devel www java
 MASTER_SITES=	http://download.sonatype.com/nexus/oss/
 PKGNAMESUFFIX=	-oss
@@ -16,7 +16,7 @@ LICENSE=	EPL
 PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 
-ONY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 NO_ARCH=	yes
 NO_BUILD=	yes

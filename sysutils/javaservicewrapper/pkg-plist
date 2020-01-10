@@ -138,6 +138,7 @@ bin/javaservicewrapper
 %%DATADIR%%/test/resourcelimit_data.conf
 %%DATADIR%%/test/resourcelimit_nofile
 %%DATADIR%%/test/resourcelimit_nofile.conf
+%%DATADIR%%/test/resourcelimit.conf
 %%DATADIR%%/test/restarter
 %%DATADIR%%/test/restarter.conf
 %%DATADIR%%/test/shutdownhook

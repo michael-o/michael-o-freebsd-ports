@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.5.43
+PORTVERSION=	3.5.45
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 USES=		gmake iconv
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 USE_ANT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/javaservicewrapper/lib

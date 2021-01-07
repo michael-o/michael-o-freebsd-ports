@@ -149,6 +149,10 @@ bin/javaservicewrapper
 %%DATADIR%%/test/simplewrapperlistener.conf
 %%DATADIR%%/test/slowstop
 %%DATADIR%%/test/slowstop.conf
+%%DATADIR%%/test/startstopstopandreturnwhilestarting
+%%DATADIR%%/test/startstopstopandreturnwhilestarting.conf
+%%DATADIR%%/test/startstopstopwhilestarting
+%%DATADIR%%/test/startstopstopwhilestarting.conf
 %%DATADIR%%/test/stopwhilestarting
 %%DATADIR%%/test/stopwhilestarting.conf
 %%DATADIR%%/test/stopwhilestartingforcestop

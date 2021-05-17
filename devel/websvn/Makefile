@@ -1,5 +1,5 @@
 PORTNAME=	websvn
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	devel www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -41,8 +41,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} \
 		&& ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-	@(cd ${STAGEDIR}${WWWDIR} \
-		&& ${FIND} . -name user_greeting.tmpl -exec ${MV} '{}' '{}'.sample \;)
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/subversion

@@ -13,20 +13,15 @@
     Eclipse Foundation. All other trademarks are the property of their respective owners.
 
 -->
-<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
-
-<!-- =============================================================== -->
-<!-- Configure the Jetty Request Log                                 -->
-<!-- =============================================================== -->
-
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
 <Configure id="Server" class="org.eclipse.jetty.server.Server">
 
-  <Ref id="Handlers">
+  <Ref refid="Handlers">
     <Call name="addHandler">
       <Arg>
         <New id="RequestLogHandler" class="org.eclipse.jetty.server.handler.RequestLogHandler">
           <Set name="requestLog">
-            <New id="LogbackRequestLog" class="ch.qos.logback.access.jetty.RequestLogImpl">
+            <New id="LogbackRequestLog" class="ch.qos.logback.access.jetty.RequestLogImpl2">
               <Set name="fileName"><Property name="nexus-conf"/>/logback-access.xml</Set>
               <Set name="quiet">true</Set>
             </New>

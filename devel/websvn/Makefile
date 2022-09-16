@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Online Subversion repository browser
+WWW=		https://websvnphp.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -15,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
 		${PEARDIR}/Text/Diff.php:devel/pear-Text_Diff@${PHP_FLAVOR}
 
 USES=		php:flavors cpe
+IGNORE_WITH_PHP=	82
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}php
 

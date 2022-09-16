@@ -1,16 +1,19 @@
-# $FreeBSD$
-
 PORTNAME=	geshi
 PORTVERSION=	1.0.9.0
 CATEGORIES=	devel pear www
+MASTER_SITES=	http://pear.geshi.org/get/
 
 MAINTAINER=	michael.osipov@siemens.com
-COMMENT=	GeSHi - generic syntax highlighter written in PHP
+COMMENT=	Generic syntax highlighter written in PHP
+WWW=		http://qbnz.com/highlighter/
 
 LICENSE=	GPLv2
 
-USES=		pear
+USES=		cpe pear
+CPE_VENDOR=	qbnz
 
 PEAR_CHANNEL=	geshi
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -11,15 +11,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
-		${PEARDIR}/Archive/Tar.php:devel/pear@${PHP_FLAVOR} \
-		${PEARDIR}/geshi.php:devel/pear-geshi@${PHP_FLAVOR} \
-		${PEARDIR}/Horde/Text/Diff.php:textproc/pear-Horde_Text_Diff@${PHP_FLAVOR}
+		${LOCALBASE}/bin/composer:devel/php-composer2@${PHP_FLAVOR}
 
-USES=		php:flavors cpe
+USES=		php:web,flavors cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}php
 
-USE_PHP=	iconv pcre xml mbstring zlib
+USE_PHP=	iconv pcre xml mbstring zlib dom
 
 NO_BUILD=	yes
 NO_ARCH=	yes

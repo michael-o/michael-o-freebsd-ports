@@ -1,5 +1,6 @@
 PORTNAME=	ghostscript
-PORTVERSION=	10.01.0
+DISTVERSION=	10.01.1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 
@@ -39,8 +40,11 @@ EXTRACT_AFTER_ARGS=	--exclude cups/libs \
 		--exclude openjpeg \
 		--exclude tiff \
 		--exclude zlib
+
+DATADIR=	${PREFIX}/share/${PORTNAME}/${DISTVERSION}
+
 GNU_CONFIGURE=	yes
-DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
+
 CONFIGURE_ARGS=	--disable-compile-inits \
 		--disable-dbus \
 		--disable-gtk \
@@ -60,23 +64,19 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 OPTIONS_DEFINE=	CUPS IJS TESSERACT
 OPTIONS_DEFAULT=CUPS
 
-CUPS_CONFIGURE_ENABLE=	cups
-CUPS_LIB_DEPENDS=	libcups.so:print/cups
-
-IJS_CONFIGURE_WITH=	ijs
 IJS_DESC=		Support libijs based Ghostscript devices
-IJS_LIB_DEPENDS=	libijs.so:print/libijs
+TESSERACT_DESC=		Enable bundled Tesseract OCR engine
 
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_CONFIGURE_ENABLE=	cups
+
+IJS_LIB_DEPENDS=	libijs.so:print/libijs
+IJS_CONFIGURE_WITH=	ijs
+
+TESSERACT_USES=		compiler:c++17-lang
 TESSERACT_CONFIGURE_WITH=	tesseract
-TESSERACT_DESC=	Enable bundled Tesseract OCR engine
 # No TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract
 # See https://bugs.ghostscript.com/show_bug.cgi?id=706490
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTESSERACT}
-USES+=	compiler:c++17-lang
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
